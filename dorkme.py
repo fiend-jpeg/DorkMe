@@ -30,7 +30,7 @@ from bs4 import BeautifulSoup
 
 # [*] Files & constants 
 DEFAULT_CONFIG_FILE = "config.ini"
-DEFAULT_DORKS_FILE  = "dorks.txt"
+DEFAULT_DORKS_FILE  = "dorks_scams.txt"
 DEFAULT_REPORT_DIR  = "reports"
 PROXIES_FILE        = "proxies.txt"
 
@@ -623,12 +623,13 @@ def quick_proxy_check(proxies: List[str], limit: int = PROXY_TEST_LIMIT_DEFAULT,
 # [*] CLI 
 def main():
     print(r"""
- ____            _     _  __  __      
-|  _ \ ___  _ __| | __| |/ _|/ _| ___ 
-| | | / _ \| '__| |/ _` | |_| |_ / _ \
-| |_| | (_) | |  | | (_| |  _|  _|  __/
-|____/ \___/|_|  |_|\__,_|_| |_|  \___|
-DorkMe.  (Google / SerpAPI)
+________                __      _____          
+\______ \   ___________|  | __ /     \   ____  
+ |    |  \ /  _ \_  __ \  |/ //  \ /  \_/ __ \ 
+ |    `   (  <_> )  | \/    </    Y    \  ___/ 
+/_______  /\____/|__|  |__|_ \____|__  /\___  >
+        \/                  \/       \/     \/
+	[DorkMe: Google dork search automator]
 """)
 
     cfg=load_config(DEFAULT_CONFIG_FILE)
