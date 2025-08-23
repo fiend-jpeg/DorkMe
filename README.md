@@ -1,4 +1,4 @@
-# DorkME
+# DorkMe
 
 **DorkMe** is a high-performance Google dork automation tool designed for OSINT, reconnaissance, and large-scale information discovery.  
 With support for proxy chaining, SerpAPI integration, configurable request pacing, and powerful CSV/HTML reporting, DorkMe makes it simple to perform deep reconnaissance while keeping resource usage efficient and controlled.
