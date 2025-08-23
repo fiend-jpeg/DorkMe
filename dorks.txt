@@ -1,0 +1,71 @@
+## Call center job ads & recruiting
+site:naukri.com "international call center" "US process" "night shift"
+site:shine.com "customer service" "tech support" "US shift" site:.in
+site:indeed.com "windows support" "night shift" site:.in
+site:timesjobs.com "BPO" "tech support" "night shift" site:.in
+"process trainer" "BPO" "voice process" site:.in
+"looking for candidates" "BPO" "night shift" site:.in
+
+## PBX / VoIP admin panels
+intitle:"FreePBX Administration" site:.in
+inurl:"/admin" intext:"3CX Phone System" site:.in
+inurl:"/portal" "voip" "login" site:.in
+inurl:"/login" intitle:"Asterisk" site:.in
+inurl:"/admin" intext:"Elastix" site:.in
+
+## Fake tech support & banking pages
+"microsoft support" "toll free" site:.in
+"quickbooks support" "24/7" site:.in
+"hp printer support" "helpline" site:.in
+"norton antivirus" "toll free" site:.in
+"mcafee support" "call now" site:.in
+"remote assistance" "customer care" site:.in
+"24x7 technical support" site:.in
+
+## Exposed customer/lead data
+filetype:xls site:.in "customer name" "phone number"
+filetype:csv site:.in "email" "phone"
+filetype:pdf site:.in "client list"
+"lead list" filetype:xls site:.in
+inurl:/uploads/ filetype:xls site:.in
+
+## Internal docs & scripts
+filetype:pdf site:.in "SOP" "call center"
+filetype:docx site:.in "training manual"
+filetype:ppt site:.in "sales script"
+filetype:xls site:.in "employee roster"
+filetype:xls site:.in "dialer list"
+
+## Public admin panels
+intitle:"index of" "admin"
+intitle:"index of" "confidential"
+inurl:"/admin/login" site:.in
+inurl:"cpanel" site:.in
+intitle:"phpMyAdmin" "Welcome to" site:.in
+
+## CCTV / IP cameras (publicly indexed)
+intitle:"webcamXP 5" site:.in
+inurl:"/view.shtml" site:.in
+intitle:"IP Camera Viewer" site:.in
+intitle:"Live View / - AXIS" site:.in
+
+## Cloud storage leaks
+site:drive.google.com filetype:pdf "customer list"
+site:dropbox.com "customer data" site:.in
+site:docs.google.com "client list"
+
+## Open directory listings
+intitle:"index of" "calls"
+intitle:"index of" "voip"
+intitle:"index of" "billing"
+intitle:"index of" "training"
+
+## Email harvesting (public pages)
+"@gmail.com" "customer care" site:.in
+"@yahoo.com" "tech support" site:.in
+"contact us" "@gmail.com" site:.in
+
+## Scam phrase fingerprints
+"toll free number" "call now" site:.in
+"24x7 technical support" site:.in
+"remote assistance" "customer care" site:.in
