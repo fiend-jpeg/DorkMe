@@ -74,15 +74,14 @@ USER_AGENTS = [
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Brave/127.0.0.0",
 ]
 
-# Minimal-data connectivity endpoints (204)
 CONNECT_TEST_URLS = [
     "https://www.google.com/generate_204",
     "https://www.gstatic.com/generate_204",
     "http://cp.cloudflare.com/generate_204",
 ]
 
-PROXY_TEST_LIMIT_DEFAULT = 10  # how many proxies to test quickly
-PROXY_TEST_TIMEOUT = 5         # seconds
+PROXY_TEST_LIMIT_DEFAULT = 10  
+PROXY_TEST_TIMEOUT = 5         
 
 def ua() -> str: return random.choice(USER_AGENTS)
 def utcnow(fmt="%Y-%m-%d %H:%M:%SZ"): return datetime.now(timezone.utc).strftime(fmt)
@@ -246,7 +245,7 @@ def prompt_update_config(cfg: ConfigParser, path: str):
     if rdir:
         run["report_dir"] = rdir
 
-    # Report format prompt (html/csv/both)
+    #format (html/csv/both)
     ask_choice("report_format", "Report format", ["html","csv","both"], run.get("report_format","html"))
 
     with open(path, "w", encoding="utf-8") as f:
@@ -290,7 +289,8 @@ def parse_dorks_file(path: str) -> List[Tuple[str, List[str]]]:
 # [*] Google helpers 
 def make_google_url_from_query(query: str, start: int = 0, extra_query: str = GOOGLE_EXTRA_PARAMS) -> str:
     if query.lower().startswith("http"):
-        # If it's already a URL, we still might need to append start= for pagination
+        # URL append ...  
+		start for pagination
         url = query
         parsed = urllib.parse.urlparse(url)
         q = urllib.parse.parse_qs(parsed.query)
@@ -418,7 +418,7 @@ class Runner:
                 break
             res = parse_google_serp_html(r.text)
             if not res:
-                # No more results likely
+                # whomp whomp 
                 break
             allres.extend(res)
         # dedup across pages
@@ -430,7 +430,7 @@ class Runner:
         return out
 
     def serpapi_search_pages(self, query_or_url: str) -> List[Tuple[str,str]]:
-        # Extract query from URL if needed
+        # Extract query from URL if needed ...
         if query_or_url.lower().startswith("http"):
             parsed = urllib.parse.urlparse(query_or_url)
             q = urllib.parse.parse_qs(parsed.query).get("q", [""])[0]
@@ -457,7 +457,7 @@ class Runner:
             if not res:
                 break
             allres.extend(res)
-        # dedup
+        # dedup ...
         seen=set(); out=[]
         for (t,u) in allres:
             if u not in seen:
@@ -496,7 +496,7 @@ class Runner:
         print(f"      -> {len(out)} result(s)" if out else "      -> 0 results (blocked/none)")
         return q, out
 
-# [*] Reports 
+# [*] Reports reports reports 
 def build_html(sections_out: List[Tuple[str, List[str], List[Tuple[str,str,str]]]])->str:
     now=utcnow()
     css="""
@@ -537,7 +537,7 @@ def save_csv(path: str, sections_out: List[Tuple[str, List[str], List[Tuple[str,
             for (q, t, u) in rows:
                 w.writerow([title, q, t, u])
 
-# [Connectivity Tests] #
+# [Connectivity Tests] 
 def _http_204_get(url: str, proxy: Optional[str] = None, timeout: int = PROXY_TEST_TIMEOUT) -> Tuple[bool, float, int]:
     """
     Try a quick HTTP GET to a known 204/no-content URL.
