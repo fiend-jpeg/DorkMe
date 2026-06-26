@@ -1,3 +1,21 @@
+## ArcGIS/Flock-like map services
+intitle:"Flock" inurl:/FeatureServer/
+intitle:"Flock Safety" inurl:arcgis.com
+inurl:"flocksafety.com" ext:json api_key
+
+## General ALPR/Surveillance Camera Dorks
+inurl:/view/view.shtml
+inurl:top.htm inurl:currenttime
+intitle:"Live View / - AXIS"
+inurl:"CgiStart?page="
+intitle:"webcamXP 5"
+inurl:iview/view.shtml
+inurl:currenttime inurl:top.htm
+
+## Exposed APIs/Dashboards
+intitle:"index of" "api" "flock"
+inurl:swagger.json flock
+
 ## Call center job ads & recruiting
 site:naukri.com "international call center" "US process" "night shift"
 
